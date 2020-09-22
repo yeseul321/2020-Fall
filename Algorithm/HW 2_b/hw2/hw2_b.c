@@ -203,7 +203,7 @@ void heapSort(float arr[], int size) { //힙정렬
 
 }
 
-void init_array(float arr[], float res[], int size) {
+void init_array(float arr[], float res[], int size) { //배열 복제하는 함수
 	for (int i = 0; i < size; i++) {
 		res[i] = arr[i];
 	}
@@ -216,11 +216,11 @@ int main() {
 
 	float Q[8];
 	for (int i = 0; i < 8; i++) {
-		Q[i] = (float)(((float)rand()*2.0f - RAND_MAX)/RAND_MAX);
+		Q[i] = (float)(((float)rand()*2.0f - RAND_MAX)/RAND_MAX); //난수생성하여 배열로 만듦
 	}
 	printf("최초 입력: [ ");
 	for (int i = 0; i < 8; i++) {
-		printf("%.3f ", Q[i]);
+		printf("%.3f ", Q[i]); //소수점 셋째자리까지
 	}
 	printf("] \n");
 	

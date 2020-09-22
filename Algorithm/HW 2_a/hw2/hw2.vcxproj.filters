@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hw2_a.c">
+    <ClCompile Include="hw3_a.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
