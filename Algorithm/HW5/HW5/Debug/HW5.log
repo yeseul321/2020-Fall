@@ -1,0 +1,7 @@
+﻿  hw5_hash.c
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw5\hw5\hw5_hash.c(16): warning C4047: '==': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw5\hw5\hw5_hash.c(21): warning C4013: 'linear_probing'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw5\hw5\hw5_hash.c(31): warning C4047: '==': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw5\hw5\hw5_hash.c(61): warning C4047: '=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw5\hw5\hw5_hash.c(62): warning C4047: '=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+  HW5.vcxproj -> C:\Users\YESEUL JEONG\Study\2020 Fall\Algorithm\HW5\Debug\HW5.exe
