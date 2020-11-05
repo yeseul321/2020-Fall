@@ -1,0 +1,12 @@
+﻿  7.c
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(33): warning C4047: 'return': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(36): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(39): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(48): warning C4047: '<': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(48): warning C4047: ':': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(51): warning C4047: '=': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(52): warning C4047: '함수': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(52): warning C4024: 'result_show': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(53): warning C4047: 'return': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw7\hw7\7.c(30): warning C4047: '초기화 중': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+  HW7.vcxproj -> C:\Users\YESEUL JEONG\Study\2020 Fall\Algorithm\HW7\Debug\HW7.exe
