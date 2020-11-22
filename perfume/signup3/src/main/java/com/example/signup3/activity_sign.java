@@ -13,15 +13,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
-public class activity_signup extends AppCompatActivity {
+import java.util.HashMap;
+
+
+public class activity_sign extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextName;
     private Button buttonJoin;
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +37,12 @@ public class activity_signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        editTextEmail = (EditText) findViewById(R.id.editText_email);
-        editTextPassword = (EditText) findViewById(R.id.editText_passWord);
-        editTextName = (EditText) findViewById(R.id.editText_name);
+        editTextEmail = findViewById(R.id.editText_email);
+        editTextPassword = findViewById(R.id.editText_passWord);
+        editTextName = findViewById(R.id.editText_name);
+
 
         buttonJoin = (Button) findViewById(R.id.btn_join);
         buttonJoin.setOnClickListener(new View.OnClickListener() {
@@ -43,24 +53,45 @@ public class activity_signup extends AppCompatActivity {
                     createUser(editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextName.getText().toString());
                 } else {
                     // 이메일과 비밀번호가 공백인 경우
-                    Toast.makeText(activity_signup.this, "계정과 비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity_sign.this, "계정과 비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
     private void createUser(String email, String password, String name) {
+
+        editTextEmail = findViewById(R.id.editText_email);
+        editTextPassword = findViewById(R.id.editText_passWord);
+        editTextName = findViewById(R.id.editText_name);
+
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // 회원가입 성공시
-                            Toast.makeText(activity_signup.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity_sign.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            String email = user.getEmail();
+                            String uid = user.getUid();
+                            String name = editTextName.getText().toString().trim();
+
+                            //해쉬맵 테이블을 파이어베이스 데이터베이스에 저장
+                            HashMap<Object,String> hashMap = new HashMap<>();
+
+                            hashMap.put("email",email);
+                            hashMap.put("name",name);
+
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference reference = database.getReference("Users");
+                            reference.child(name).setValue(hashMap);
+
                             finish();
                         } else {
                             // 계정이 중복된 경우
-                            Toast.makeText(activity_signup.this, "이미 존재하는 계정입니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity_sign.this, "이미 존재하는 계정입니다.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

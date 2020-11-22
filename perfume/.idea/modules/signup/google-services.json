@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "191874373122",
+    "firebase_url": "https://perfume-5eada.firebaseio.com",
+    "project_id": "perfume-5eada",
+    "storage_bucket": "perfume-5eada.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191874373122:android:22c06ca3747574a404791b",
+        "android_client_info": {
+          "package_name": "com.example.signup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191874373122-fhrf3m8ae0av17r6agvo5adhn5rhiq20.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.signup",
+            "certificate_hash": "b55b38607bbb383f1b5088276fe20cd0db6431ba"
+          }
+        },
+        {
+          "client_id": "191874373122-2mjfvr6n4f8sqj7cugm85vo31bv2i7g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAonJRlg643U7zGuwbU92sK7buMcZdgXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191874373122-2mjfvr6n4f8sqj7cugm85vo31bv2i7g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

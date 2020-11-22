@@ -1,0 +1,13 @@
+﻿  best.c
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(25): warning C4013: 'bound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(26): warning C4013: 'insert'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(53): warning C4133: '함수': 'node [20]'과(와) 'const char *' 사이의 형식이 호환되지 않습니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(53): warning C4020: 'remove': 실제 매개 변수가 너무 많습니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(17): warning C4101: 'best_bound' :참조되지 않은 지역 변수입니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(104): warning C4028: 정식 매개 변수 1이(가) 선언과 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(104): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(104): warning C4273: 'remove': dll 링크가 일치하지 않습니다.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(364): note: 'remove'의 이전 정의를 참조하십시오.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(102): warning C4716: 'insert': 값을 반환해야 합니다.
+c:\users\yeseul jeong\study\2020 fall\algorithm\hw11_3\hw11_3\best.c(110): warning C4716: 'remove': 값을 반환해야 합니다.
+  HW11_3.vcxproj -> C:\Users\YESEUL JEONG\Study\2020 Fall\Algorithm\HW11_3\Debug\HW11_3.exe

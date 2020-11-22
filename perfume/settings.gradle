@@ -1,0 +1,5 @@
+include ':signup3'
+include ':signup2'
+include ':signup'
+include ':app'
+rootProject.name = "perfume"
