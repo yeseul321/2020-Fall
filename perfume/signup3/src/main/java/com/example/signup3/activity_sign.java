@@ -3,7 +3,9 @@ package com.example.signup3;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,11 +16,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class activity_sign extends AppCompatActivity {
@@ -26,9 +32,10 @@ public class activity_sign extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private EditText editTextName;
+    public EditText editTextName;
     private Button buttonJoin;
     private DatabaseReference mDatabase;
+
 
 
     @Override
@@ -59,7 +66,30 @@ public class activity_sign extends AppCompatActivity {
         });
     }
 
-    private void createUser(String email, String password, String name) {
+    public class User{
+        public String email;
+        public String name;
+
+        public User(){
+
+        }
+        public User(String email, String name) {
+            this.email = email;
+            this.name = name;
+
+        }
+
+        @Exclude
+        public Map<String, Object> hashmap() {
+            HashMap<String, Object> Users = new HashMap<>();
+            Users.put("email", email);
+            Users.put("name", name);
+            return Users;
+        }
+    }
+
+
+    public void createUser(String email, String password, String name) {
 
         editTextEmail = findViewById(R.id.editText_email);
         editTextPassword = findViewById(R.id.editText_passWord);
@@ -78,15 +108,32 @@ public class activity_sign extends AppCompatActivity {
                             String uid = user.getUid();
                             String name = editTextName.getText().toString().trim();
 
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference reference = database.getReference("Users");
+
                             //해쉬맵 테이블을 파이어베이스 데이터베이스에 저장
                             HashMap<Object,String> hashMap = new HashMap<>();
 
                             hashMap.put("email",email);
                             hashMap.put("name",name);
 
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference reference = database.getReference("Users");
-                            reference.child(name).setValue(hashMap);
+                            reference.child(uid).setValue(hashMap);
+
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
+                                    .build();
+
+                            user.updateProfile(profileUpdates)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+
+                                            }
+                                        }
+                                    });
+
+
 
                             finish();
                         } else {
