@@ -3,6 +3,8 @@ package com.example.signup3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -74,7 +76,17 @@ public class HomeActivity extends AppCompatActivity {
         if (id == R.id.action_user) {
             if (user != null) {
                 name = user.getDisplayName();
-                Toast.makeText(getApplicationContext(), name + " 님 반갑습니다! ", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder dlg = new AlertDialog.Builder(HomeActivity.this);
+                dlg.setTitle("User Info");
+                dlg.setMessage(name + "님, 반갑습니다!");
+                dlg.setIcon(R.drawable.user);
+
+                dlg.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                        dlg.show();
                 return true;
             }
         } else {

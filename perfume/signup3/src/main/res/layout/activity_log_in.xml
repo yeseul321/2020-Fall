@@ -15,7 +15,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         app:srcCompat="@drawable/logo" />
-    ​
 
     <EditText
         android:id="@+id/editText_email"
@@ -29,8 +28,6 @@
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         />
-    ​
-
     ​
 
     <EditText
@@ -55,6 +52,7 @@
         android:background="#F9CCCA"
         android:text="login"
         android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
         />
     ​
 
