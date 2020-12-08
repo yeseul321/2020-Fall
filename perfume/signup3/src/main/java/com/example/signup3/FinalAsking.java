@@ -28,13 +28,9 @@ public class FinalAsking extends AppCompatActivity {
 
     Spinner spinner1;
     Spinner spinner2;
-    String s1;
-    String s2;
+    String s1; //intent로 넘길 scent1 객체
+    String s2; //intent로 넘길 scent2 객체
 
-
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference("Users");
 
 
     @Override
@@ -238,19 +234,6 @@ public class FinalAsking extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                HashMap<Object,String> hashMap = new HashMap<>();
-
-                String name = user.getDisplayName();
-                String email = user.getEmail();
-
-                hashMap.put("name", name);
-                hashMap.put("email", email);
-                hashMap.put("scent1",s1);
-                hashMap.put("scent2",s2);
-
-                String uid = user.getUid();
-
-                reference.child(uid).setValue(hashMap);
 
                 Intent intent = new Intent(FinalAsking.this, result.class);
 
