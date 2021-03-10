@@ -52,7 +52,6 @@ public class HomeActivity extends AppCompatActivity {
         buttonPerfume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // activity_sign 연결
                 Intent intent = new Intent(HomeActivity.this, asking.class);
                 startActivity(intent);
             }
